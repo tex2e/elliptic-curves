@@ -26,7 +26,5 @@ This memo specifies two elliptic curves over prime fields:
 
 ## TODO
 
-- test vector
-https://tools.ietf.org/html/rfc7748#page-13
 - findBasepoint
 https://tools.ietf.org/html/rfc7748#appendix-A.3

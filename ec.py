@@ -146,6 +146,20 @@ if __name__ == '__main__':
     print(out)
 
     k = binascii.unhexlify(
+        b'0900000000000000000000000000000000000000000000000000000000000000')
+    u = binascii.unhexlify(
+        b'0900000000000000000000000000000000000000000000000000000000000000')
+    r1 = binascii.unhexlify(
+        b'422c8e7a6227d7bca1350b3e2bb7279f7897b87bb6854b783c60e80311ae3079')
+    r1000 = binascii.unhexlify(
+        b'684cf59ba83309552800ef566f2f4d3c1c3887c49360e3875f2eb94d99532c51')
+    for i in range(1, 1001):
+        k, u = x25519(k, u), k
+        if i == 1: assert k == r1
+        if i == 1000: assert k == r1000
+    print(k)
+
+    k = binascii.unhexlify(
         b'3d262fddf9ec8e88495266fea19a34d28882acef045104d0d1aae121' +
         b'700a779c984c24f8cdd78fbff44943eba368f54b29259a4f1c600ad3')
     u = binascii.unhexlify(
@@ -170,3 +184,21 @@ if __name__ == '__main__':
     out = x448(k, u)
     assert out == r
     print(out)
+
+    k = binascii.unhexlify(
+        b'05000000000000000000000000000000000000000000000000000000' +
+        b'00000000000000000000000000000000000000000000000000000000')
+    u = binascii.unhexlify(
+        b'05000000000000000000000000000000000000000000000000000000' +
+        b'00000000000000000000000000000000000000000000000000000000')
+    r1 = binascii.unhexlify(
+        b'3f482c8a9f19b01e6c46ee9711d9dc14fd4bf67af30765c2ae2b846a' +
+        b'4d23a8cd0db897086239492caf350b51f833868b9bc2b3bca9cf4113')
+    r1000 = binascii.unhexlify(
+        b'aa3b4749d55b9daf1e5b00288826c467274ce3ebbdd5c17b975e09d4' +
+        b'af6c67cf10d087202db88286e2b79fceea3ec353ef54faa26e219f38')
+    for i in range(1, 1001):
+        k, u = x448(k, u), k
+        if i == 1: assert k == r1
+        if i == 1000: assert k == r1000
+    print(k)
