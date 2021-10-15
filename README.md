@@ -3,8 +3,8 @@
 
 This memo specifies two elliptic curves over prime fields:
 
-1. x25519 -- Curve25519 for the ~128-bit security level.
-2. x448 -- Curve448 for the ~224-bit security level.
+* **x25519** -- Curve25519 for the ~128-bit security level.
+* **x448** -- Curve448 for the ~224-bit security level.
 
 
 ## References
