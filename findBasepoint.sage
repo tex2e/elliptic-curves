@@ -2,7 +2,7 @@
 def findBasepoint(prime, A):
   F = GF(prime)
   E = EllipticCurve(F, [0, A, 0, 1, 0])
-  for uInt in range(1, 1e3):
+  for uInt in range(1, 1000):
     u = F(uInt)
     v2 = u^3 + A*u^2 + u
     if not v2.is_square():
